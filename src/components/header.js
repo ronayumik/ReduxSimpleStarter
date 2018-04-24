@@ -6,7 +6,6 @@ import * as actions from '../actions';
 class Header extends Component {
   authButton() {
     const {authenticated, authenticate} = this.props;
-    console.log(authenticated);
     if(authenticated){
       return <button onClick = {
         () => authenticate(false)
