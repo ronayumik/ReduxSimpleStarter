@@ -4,9 +4,15 @@ export default function({ dispatch }) {
 
     // having .then means it is a promise
     // having a payload means it is indeed an action
-    if(!action.payload || !action.payload.then){
+    if (!action.payload || !action.payload.then) {
       return next(action);
     }
-    console.log('We have a promise');
-  }
+
+    // Make sure action promise resolves
+    action.payload
+    .then( response =>
+        // Create new action with same action, but different payload
+        dispatch({ ...action, payload: response })
+    );
+  };
 }

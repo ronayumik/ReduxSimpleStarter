@@ -14,10 +14,10 @@ class UserList extends Component {
             {user.name}
           </h4>
           <p className="card-text">
-            Dummy Company
+            {user.company.name}
           </p>
-          <a href="" className="btn btn-primary">
-            Email
+          <a href={user.website} className="btn btn-primary">
+            Website
           </a>
         </div>
     );

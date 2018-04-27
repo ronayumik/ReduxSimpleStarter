@@ -3,8 +3,9 @@ import { FETCH_USERS } from '../actions/types';
 export default function(state = [], action) {
   switch (action.type) {
     case FETCH_USERS:
-      debugger;
-      return [...state, ...action.payload];
+//      debugger;
+        console.log(action.payload);
+      return [...state, ...action.payload.data];
     default:
       return state;
   }
